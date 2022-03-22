@@ -1,6 +1,7 @@
 # 🌐 Ceramic Anchor Allowlist
 
-This repository details the process required to be added to the allow list for the 3Box Labs hosted anchor service.
+This repository details the process required to be added to the allow list for the 3Box Labs hosted anchor service for Ceramic mainnet. If you wish to run a node on the clay testnet, that should work out of the box without any need to open a request on this repository.
+
 ## Adding your node
 Create an issue using the *Anchor Allowlist Request* template filling in each section with the neccessary information. 
 
@@ -43,7 +44,7 @@ If you are creating a new issue you must fill in the *Anchor Allowlist Request* 
 
 > **Data persistence is a critical step.** Remember that there are no guarantees that other nodes in the network are keeping copies of your streams so you must pin all streams that you care about and back up their data.
 >
-> If your nodes restart for any reason and you *do not* have data persistence in place, the following will occur: (1) Your IPFS `config` file will be regenerated with a new multiaddress and you will need to reconnect to the rest of the network. (2) The state data for streams pinned on your node will get deleted and likely become unrecoverable. (3) The IPFS data for streams your node has loaded will get deleted and likely become unrecoverable, corrupting your stream state.
+> If your node restarts for any reason and you *do not* have data persistence in place, the following will occur: (1) Your IPFS `config` file will be regenerated with a new multiaddress and you will need to reconnect to the rest of the network. (2) The state data for streams pinned on your node will get deleted and likely become unrecoverable. (3) The IPFS data for streams your node has loaded will get deleted and likely become unrecoverable, corrupting your stream state.
 >
 > Instructions on configuring your node for proper data persistence can be found in the Ceramic docs on the [Hosting a node](https://developers.ceramic.network/run/nodes/nodes/) page.
 
@@ -51,7 +52,7 @@ Please add one of the maintainers below as an assignee to your issue. They will 
 
 ## What is the allowlist for?
 
-The allowlist is a *temporary* solution for the limitations of the 3Box Labs hosted anchor service as it is not yet sufficient to deliver optimal performance for a live decentralized network.
+The allowlist is a *temporary* solution for the limitations of how Ceramic streams currently get anchored (on a single centralized service hosted by the 3BoxLabs team). In the future the anchor process will become fully decentralized and the need for this allowlist will disappear.
 
 ## Maintainers
 
