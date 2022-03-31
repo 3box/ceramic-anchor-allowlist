@@ -24,10 +24,10 @@ If you are creating a new issue you must fill in the *Anchor Allowlist Request* 
 <!--Team name or your github handle if you are a team of one-->
 
 ### Discord
-<!--If you are part of the Ceramic discord, please provide your discord username. ex. Bob#3312-->
+<!--Your discord username. ex. Bob#3312-->
 
 ### Use case:
-<!--A few words about what your node will be used for so we can make recommendations for your setup-->
+<!--A few words on your project use case, what your node will be used for, and how you're using ceramic so we can make recommendations for your setup-->
 
 ### Overview:
 <!--How are you running your nodes? What cloud infrastructure? How are you running your IPFS node(s)?-->
