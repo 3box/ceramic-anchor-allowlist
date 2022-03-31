@@ -1,58 +1,42 @@
-# 🌐 Ceramic Anchor Allowlist
+# 🌐 3Box Labs Ceramic Anchor Service Allowlist
 
-This repository details the process required to be added to the allow list for the 3Box Labs hosted anchor service for Ceramic mainnet. If you wish to run a node on the clay testnet, that should work out of the box without any need to open a request on this repository.
+This repository details the process required to be added to the allowlist for the 3Box Labs hosted **mainnet** [Ceramic Anchor Service (CAS)](https://github.com/ceramicnetwork/ceramic-anchor-service).
+> _We recommend to start by running your Ceramic node on the Clay testnet to ensure it is set up correctly before moving to mainnet. If you wish to run a node on Clay, you do not need to open a request on this repository._
+
+### What is the allowlist for?
+
+The allowlist is a *temporary* solution for anchoring mainnet Ceramic streams (currently on a single, centralized service hosted by the 3Box Labs team). The Ceramic core developers are working on a fully decentralized anchor solution that will eliminate the reliance on this allowlist for mainnet access.
 
 ## Adding your node
-Create an issue using the *Anchor Allowlist Request* template filling in each section with the neccessary information. 
 
-Once we receive your *Anchor Allowlist Request* issue we will review it and ask for more information if needed. When your *Anchor Allowlist Request* gets accepted we will add your IP address to our allow list. The *Anchor Allowlist Request* issue with then be closed and your node will be connected to the Ceramic **mainnet** network and the [Ceramic Anchor Service](https://github.com/ceramicnetwork/ceramic-anchor-service).
+1. **Create an issue**
 
-It is recommended to first run your node on the Clay testnet to ensure it is set up correctly before running mainnet.
+    See the [Readiness checklist](#readiness-checklist) before proceeding, then use the *Anchor Allowlist Request* template and fill in each section with the requested information.
 
-### Readiness checklist
+2. **Assign a maintainer**
+
+    Add one of the maintainers below as an assignee to your issue. They will do their best to review your issue as soon as they come in. If you need more immediate assistance, reach out to the 3Box Labs team on the [Ceramic Discord](https://chat.ceramic.network) and include the URL of your issue. 
+
+3. **Connect to mainnet**
+
+    Once we receive your *Anchor Allowlist Request* issue we will review it and ask for more information if needed. When your *Anchor Allowlist Request* gets accepted we will add your Ceramic node IP address to our allowlist. The *Anchor Allowlist Request* issue will then be closed and your node should be able to connect to `https://cas.3boxlabs.com` and the rest of the Ceramic **mainnet** network.
+
+## Readiness checklist
 Before creating an issue, ensure that your setup has the following:
-- [ ] Swarm port for IPFS node is open to the internet so that peers can make connections to your node
-- [ ] API port for IPFS node is reachable by the Ceramic node 
-- [ ] HTTP API port for Ceramic daemon is open to requests from your client applications
-- [ ] Ceramic daemon CORS allowed origins regex matches the origin of your client applications (True by default)
+- [ ] [Data persistence](#data-persistence) is set up so that your Ceramic and IPFS nodes will not lose data
+- [ ] Swarm ports for IPFS are externally reachable by the internet so that peers can make connections to the node
+- [ ] API port for IPFS is internally reachable by the Ceramic daemon
+- [ ] API port for Ceramic daemon is open to requests from your client applications
+- [ ] Ceramic daemon [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) allowed origins regex matches the origin of your client applications (_This is set to `*` by default to allow any origin_)
 
-## Issue format
-If you are creating a new issue you must fill in the *Anchor Allowlist Request* issue template. A *Anchor Allowlist Request* issue will require the following information:
+## Data Persistence
+**Data persistence is a critical step.**
 
-```md
-### Team:
-<!--Team name or your github handle if you are a team of one-->
+Remember that there are no guarantees that other nodes in the network are keeping copies of your streams so you must pin all streams that you care about and back up their data.
 
-### Discord
-<!--Your discord username. ex. Bob#3312-->
+If your node restarts for any reason and you *do not* have data persistence in place, the following will occur: (1) Your Ceramic and IPFS configuration files will be regenerated and set to defaults. (2) Your pinned streams and their latest state will get deleted and likely become unrecoverable. (3) The IPFS data for streams your node has loaded will get deleted and likely become unrecoverable, corrupting your Ceramic streams' state.
 
-### Use case:
-<!--A few words on your project use case, what your node will be used for, and how you're using ceramic so we can make recommendations for your setup-->
-
-### Overview:
-<!--How are you running your nodes? What cloud infrastructure? How are you running your IPFS node(s)?-->
-
-*Ceramic State Store persistence:*
-<!--What are you doing to ensure your Ceramic data doesn't get lost?-->
-
-*IPFS Repo persistence:*
-<!--What are you doing to ensure your IPFS data doesn't get lost?-->
-
-*Static Egress IP:*
-<!--Static Egress IP address of the machine your Ceramic daemon runs on so it can connect to the 3Box Labs hosted Ceramic Anchor Service (CAS).-->
-```
-
-> **Data persistence is a critical step.** Remember that there are no guarantees that other nodes in the network are keeping copies of your streams so you must pin all streams that you care about and back up their data.
->
-> If your node restarts for any reason and you *do not* have data persistence in place, the following will occur: (1) Your IPFS `config` file will be regenerated with a new multiaddress and you will need to reconnect to the rest of the network. (2) The state data for streams pinned on your node will get deleted and likely become unrecoverable. (3) The IPFS data for streams your node has loaded will get deleted and likely become unrecoverable, corrupting your stream state.
->
-> Instructions on configuring your node for proper data persistence can be found in the Ceramic docs on the [Hosting a node](https://developers.ceramic.network/run/nodes/nodes/) page.
-
-Please add one of the maintainers below as an assignee to your issue. They will do their best to review your issue as soon as they come in. If you need more immediate assistance, reach out on [Discord](https://chat.ceramic.network) and include the URL of your issue. 
-
-## What is the allowlist for?
-
-The allowlist is a *temporary* solution for the limitations of how Ceramic streams currently get anchored (on a single centralized service hosted by the 3BoxLabs team). In the future the anchor process will become fully decentralized and the need for this allowlist will disappear.
+Instructions on configuring your node for proper data persistence can be found in the Ceramic docs on the [Hosting a node](https://developers.ceramic.network/run/nodes/nodes/) page.
 
 ## Maintainers
 
