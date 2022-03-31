@@ -19,7 +19,7 @@ The allowlist is a *temporary* solution for anchoring mainnet Ceramic streams (c
 
 3. **Connect to mainnet**
 
-    Once we receive your *Anchor Allowlist Request* issue we will review it and ask for more information if needed. When your *Anchor Allowlist Request* gets accepted we will add your IPFS node IP address to our allowlist. The *Anchor Allowlist Request* issue will then be closed and your node should be able to connect to `https://cas.3boxlabs.com` and the rest of the Ceramic **mainnet** network.
+    Once we receive your *Anchor Allowlist Request* issue we will review it and ask for more information if needed. When your *Anchor Allowlist Request* gets accepted we will add your Ceramic node IP address to our allowlist. The *Anchor Allowlist Request* issue will then be closed and your node should be able to connect to `https://cas.3boxlabs.com` and the rest of the Ceramic **mainnet** network.
 
 ## Readiness checklist
 Before creating an issue, ensure that your setup has the following:
