@@ -11,7 +11,7 @@ The allowlist is a *temporary* solution for anchoring mainnet Ceramic streams (c
 
 1. **Create an issue**
 
-    See the [Readiness checklist](#readiness-checklist) before proceeding, then use the *Anchor Allowlist Request* template and fill in each section with the requested information.
+    See the [Readiness checklist](#readiness-checklist) before proceeding, then create a Github issue in this repo using the *Anchor Allowlist Request* template and fill in each section with the requested information.
 
 2. **Assign a maintainer**
 
